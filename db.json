@@ -5,7 +5,7 @@
       "nombre": "Admin Principal",
       "email": "admin@transportestc.com",
       "rut": "12345678-9",
-      "roleId": 1,
+      "role": "ADMINISTRADOR",
       "activo": true
     },
     {
@@ -13,7 +13,7 @@
       "nombre": "María González",
       "email": "maria@cliente1.com", 
       "rut": "98765432-1",
-      "roleId": 2,
+      "role": "CLIENTE",
       "activo": true
     },
     {
@@ -21,50 +21,41 @@
       "nombre": "Juan Pérez",
       "email": "juan@transportestc.com",
       "rut": "11223344-5", 
-      "roleId": 3,
+      "role": "CONDUCTOR",
       "activo": true
     }
-  ],
-  
-  "roles": [
-    { "id": 1, "nombre": "ADMINISTRADOR" },
-    { "id": 2, "nombre": "CLIENTE" },
-    { "id": 3, "nombre": "CONDUCTOR" },
-    { "id": 4, "nombre": "COORDINADOR FLOTA" }
   ],
 
   "solicitudes": [
     {
       "id": 1,
       "clienteId": 2,
-      "tipoTrasladoId": 1,
-      "estadoId": 1,
       "fechaServicio": "2024-03-15",
       "horaRequerida": "08:00",
       "horaFin": "17:00",
       "origen": "Campamento Los Andes",
       "destino": "Aeropuerto Antofagasta",
-      "pasajeros": "Juan Pérez\nMaría García\nLuis Morales",
+      "pasajeros": "Juan Pérez, María García, Luis Morales",
       "equipoRequerido": "MINIBUS",
       "nombreEncargado": "María González",
       "telefonoEncargado": "+56987654321",
-      "observaciones": "Servicio especial",
+      "estado": "PENDIENTE",
+      "observaciones": "Servicio especial con equipaje",
       "fechaCreacion": "2024-03-01T10:30:00Z"
     },
     {
       "id": 2,
       "clienteId": 2,
-      "tipoTrasladoId": 2,
-      "estadoId": 2,
       "fechaServicio": "2024-03-20",
       "horaRequerida": "14:00",
       "horaFin": "18:00",
       "origen": "Hotel Centro",
       "destino": "Faena Norte",
-      "pasajeros": "Carlos Mendoza\nSofía Reyes",
+      "pasajeros": "Carlos Mendoza, Sofía Reyes",
       "equipoRequerido": "CAMIONETA",
       "nombreEncargado": "María González",
       "telefonoEncargado": "+56987654321",
+      "estado": "APROBADA",
       "observaciones": "Transporte regular",
       "fechaCreacion": "2024-03-05T14:15:00Z"
     }
@@ -103,54 +94,82 @@
     }
   ],
 
-  "estados_solicitud": [
-    { "id": 1, "nombre": "PENDIENTE", "color": "#ffa500" },
-    { "id": 2, "nombre": "APROBADA", "color": "#32cd32" },
-    { "id": 3, "nombre": "ASIGNADA", "color": "#1e90ff" },
-    { "id": 4, "nombre": "COMPLETADA", "color": "#228b22" },
-    { "id": 5, "nombre": "CANCELADA", "color": "#dc143c" }
-  ],
-
-  "tipos_traslado": [
-    { "id": 1, "nombre": "SUBIDA" },
-    { "id": 2, "nombre": "BAJADA" },
-    { "id": 3, "nombre": "TRASLADO_INTERNO" },
-    { "id": 4, "nombre": "AEROPUERTO" },
-    { "id": 5, "nombre": "ESPECIAL" }
-  ],
-
   "notifications": [
     {
       "id": 1,
       "userId": 1,
       "tipo": "SISTEMA",
       "titulo": "Nueva Solicitud",
-      "mensaje": "María González creó una nueva solicitud",
+      "mensaje": "María González creó una nueva solicitud para el 15 de Marzo",
       "leida": false,
-      "fechaCreacion": "2024-03-01T10:31:00Z"
+      "fechaCreacion": "2024-03-01T10:31:00Z",
+      "redireccion": "/requests"
     },
     {
       "id": 2,
       "userId": 3,
       "tipo": "ASIGNACION",
       "titulo": "Nueva Asignación",
-      "mensaje": "Se te asignó un servicio para mañana",
+      "mensaje": "Se te asignó el servicio del 20 de Marzo a las 14:00",
       "leida": false,
-      "fechaCreacion": "2024-03-08T09:21:00Z"
+      "fechaCreacion": "2024-03-08T09:21:00Z",
+      "redireccion": "/my-assignments"
     }
   ],
 
-  "auth": {
-    "admin": { "email": "admin@transportestc.com", "password": "admin123", "userId": 1 },
-    "client": { "email": "maria@cliente1.com", "password": "client123", "userId": 2 },
-    "driver": { "email": "juan@transportestc.com", "password": "driver123", "userId": 3 }
-  },
-
-  "stats": {
-    "totalSolicitudes": 2,
-    "solicitudesPendientes": 1,
-    "totalVehiculos": 3,
-    "vehiculosDisponibles": 2,
-    "totalUsuarios": 3
-  }
+  "config": [
+    {
+      "id": 1,
+      "key": "roles",
+      "data": [
+        { "id": 1, "nombre": "ADMINISTRADOR" },
+        { "id": 2, "nombre": "CLIENTE" },
+        { "id": 3, "nombre": "CONDUCTOR" },
+        { "id": 4, "nombre": "COORDINADOR FLOTA" }
+      ]
+    },
+    {
+      "id": 2,
+      "key": "estados_solicitud",
+      "data": [
+        { "id": 1, "nombre": "PENDIENTE", "color": "#ffa500" },
+        { "id": 2, "nombre": "APROBADA", "color": "#32cd32" },
+        { "id": 3, "nombre": "ASIGNADA", "color": "#1e90ff" },
+        { "id": 4, "nombre": "COMPLETADA", "color": "#228b22" },
+        { "id": 5, "nombre": "CANCELADA", "color": "#dc143c" }
+      ]
+    },
+    {
+      "id": 3,
+      "key": "tipos_traslado",
+      "data": [
+        { "id": 1, "nombre": "SUBIDA" },
+        { "id": 2, "nombre": "BAJADA" },
+        { "id": 3, "nombre": "TRASLADO_INTERNO" },
+        { "id": 4, "nombre": "AEROPUERTO" },
+        { "id": 5, "nombre": "ESPECIAL" }
+      ]
+    },
+    {
+      "id": 4,
+      "key": "auth_demo",
+      "data": {
+        "admin": { "email": "admin@transportestc.com", "password": "admin123", "userId": 1 },
+        "client": { "email": "maria@cliente1.com", "password": "client123", "userId": 2 },
+        "driver": { "email": "juan@transportestc.com", "password": "driver123", "userId": 3 }
+      }
+    },
+    {
+      "id": 5,
+      "key": "stats",
+      "data": {
+        "totalSolicitudes": 2,
+        "solicitudesPendientes": 1,
+        "totalVehiculos": 3,
+        "vehiculosDisponibles": 2,
+        "totalUsuarios": 3,
+        "ultimaActualizacion": "2024-03-22T10:00:00Z"
+      }
+    }
+  ]
 }
