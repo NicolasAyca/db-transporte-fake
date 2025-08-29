@@ -1,0 +1,347 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nombre": "Administrador Principal",
+      "email": "admin@transportestc.com",
+      "rut": "12345678-9",
+      "password": "$2b$10$hash_admin_password",
+      "roleId": 1,
+      "areaEquipoId": null,
+      "fechaCreacion": "2024-01-15T10:00:00Z",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "María González",
+      "email": "maria@cliente1.com",
+      "rut": "98765432-1",
+      "password": "$2b$10$hash_client_password",
+      "roleId": 2,
+      "areaEquipoId": 1,
+      "fechaCreacion": "2024-02-01T09:00:00Z",
+      "activo": true
+    },
+    {
+      "id": 3,
+      "nombre": "Juan Pérez",
+      "email": "juan.conductor@transportestc.com",
+      "rut": "11223344-5",
+      "password": "$2b$10$hash_driver_password",
+      "roleId": 3,
+      "areaEquipoId": 2,
+      "fechaCreacion": "2024-01-20T08:30:00Z",
+      "activo": true
+    },
+    {
+      "id": 4,
+      "nombre": "Ana Coordinadora",
+      "email": "ana@transportestc.com",
+      "rut": "55667788-9",
+      "password": "$2b$10$hash_coord_password",
+      "roleId": 4,
+      "areaEquipoId": 2,
+      "fechaCreacion": "2024-01-18T11:00:00Z",
+      "activo": true
+    },
+    {
+      "id": 5,
+      "nombre": "Carlos Cliente",
+      "email": "carlos@empresa2.com",
+      "rut": "33445566-7",
+      "password": "$2b$10$hash_client2_password",
+      "roleId": 2,
+      "areaEquipoId": 3,
+      "fechaCreacion": "2024-02-15T14:30:00Z",
+      "activo": true
+    }
+  ],
+  
+  "roles": [
+    { "id": 1, "nombre": "ADMINISTRADOR", "descripcion": "Acceso completo al sistema" },
+    { "id": 2, "nombre": "CLIENTE", "descripcion": "Puede crear y gestionar solicitudes" },
+    { "id": 3, "nombre": "CONDUCTOR", "descripcion": "Puede ver sus asignaciones" },
+    { "id": 4, "nombre": "COORDINADOR FLOTA", "descripcion": "Gestiona vehículos y asignaciones" }
+  ],
+
+  "cliente_info": [
+    {
+      "id": 1,
+      "userId": 2,
+      "empresa": "Minera Los Andes S.A.",
+      "ciudad": "Antofagasta",
+      "contacto": "+56 9 8765 4321",
+      "direccion": "Av. Pedro Aguirre Cerda 123"
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "empresa": "Constructora Del Norte Ltda.",
+      "ciudad": "Calama",
+      "contacto": "+56 9 3344 5566",
+      "direccion": "Calle Industrial 456"
+    }
+  ],
+
+  "solicitudes": [
+    {
+      "id": 1,
+      "clienteId": 1,
+      "tipoTrasladoId": 1,
+      "estadoId": 1,
+      "fechaServicio": "2024-03-15",
+      "horaRequerida": "08:00",
+      "horaFin": "17:00",
+      "origen": "Campamento Minero Los Andes",
+      "destino": "Aeropuerto Antofagasta",
+      "pasajeros": "Juan Pérez - 12.345.678-9\nMaría García - 98.765.432-1\nLuis Morales - 11.223.344-5",
+      "equipoRequerido": "MINIBUS",
+      "nombreEncargado": "María González",
+      "telefonoEncargado": "+56987654321",
+      "nombreFaena": "Proyecto Norte",
+      "centroCosto": "CC-001",
+      "numeroContrato": "CT-2024-001",
+      "numeroPO": "PO-240315-001",
+      "observaciones": "Pasajeros con equipaje pesado. Coordinación especial requerida.",
+      "fechaCreacion": "2024-03-01T10:30:00Z",
+      "fechaActualizacion": "2024-03-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "clienteId": 2,
+      "tipoTrasladoId": 2,
+      "estadoId": 2,
+      "fechaServicio": "2024-03-20",
+      "horaRequerida": "14:00",
+      "horaFin": "18:00",
+      "origen": "Hotel Diego de Almagro",
+      "destino": "Faena Constructora",
+      "pasajeros": "Carlos Mendoza - 22.333.444-5\nSofía Reyes - 33.444.555-6",
+      "equipoRequerido": "CAMIONETA",
+      "nombreEncargado": "Carlos Cliente",
+      "telefonoEncargado": "+56933445566",
+      "nombreFaena": "Construcción Plaza Norte",
+      "centroCosto": "CC-002",
+      "numeroContrato": "CT-2024-002",
+      "numeroPO": "PO-240320-002",
+      "observaciones": "Trasladar herramientas especializadas",
+      "fechaCreacion": "2024-03-05T14:15:00Z",
+      "fechaActualizacion": "2024-03-08T09:20:00Z"
+    },
+    {
+      "id": 3,
+      "clienteId": 1,
+      "tipoTrasladoId": 3,
+      "estadoId": 3,
+      "fechaServicio": "2024-03-25",
+      "horaRequerida": "09:30",
+      "horaFin": "12:00",
+      "origen": "Oficinas Centrales",
+      "destino": "Planta de Procesamiento",
+      "pasajeros": "Roberto Silva - 44.555.666-7",
+      "equipoRequerido": "AUTO",
+      "nombreEncargado": "María González",
+      "telefonoEncargado": "+56987654321",
+      "nombreFaena": "Inspección Mensual",
+      "centroCosto": "CC-001",
+      "numeroContrato": "CT-2024-001",
+      "numeroPO": "PO-240325-003",
+      "observaciones": "Inspección de rutina",
+      "fechaCreacion": "2024-03-10T16:45:00Z",
+      "fechaActualizacion": "2024-03-12T11:30:00Z"
+    }
+  ],
+
+  "vehiculos": [
+    {
+      "id": 1,
+      "patente": "ABCD12",
+      "tipo": "MINIBUS",
+      "capacidad": 15,
+      "estado": "DISPONIBLE",
+      "enUso": false,
+      "marca": "Mercedes-Benz",
+      "modelo": "Sprinter",
+      "año": 2022,
+      "kilometraje": 45000,
+      "fechaRevision": "2024-06-15",
+      "fechaCreacion": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "patente": "EFGH34",
+      "tipo": "CAMIONETA",
+      "capacidad": 5,
+      "estado": "EN_SERVICIO",
+      "enUso": true,
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "año": 2023,
+      "kilometraje": 25000,
+      "fechaRevision": "2024-05-20",
+      "fechaCreacion": "2024-01-20T11:30:00Z"
+    },
+    {
+      "id": 3,
+      "patente": "IJKL56",
+      "tipo": "BUS",
+      "capacidad": 40,
+      "estado": "DISPONIBLE",
+      "enUso": false,
+      "marca": "Volvo",
+      "modelo": "B7R",
+      "año": 2021,
+      "kilometraje": 78000,
+      "fechaRevision": "2024-04-10",
+      "fechaCreacion": "2024-01-10T09:15:00Z"
+    },
+    {
+      "id": 4,
+      "patente": "MNOP78",
+      "tipo": "AUTO",
+      "capacidad": 4,
+      "estado": "EN_MANTENIMIENTO",
+      "enUso": false,
+      "marca": "Chevrolet",
+      "modelo": "Cruze",
+      "año": 2020,
+      "kilometraje": 95000,
+      "fechaRevision": "2024-07-01",
+      "fechaCreacion": "2024-01-12T15:20:00Z"
+    }
+  ],
+
+  "estados_solicitud": [
+    { "id": 1, "nombre": "PENDIENTE", "descripcion": "Solicitud creada, pendiente de aprobación", "color": "#ffa500" },
+    { "id": 2, "nombre": "APROBADA", "descripcion": "Solicitud aprobada, pendiente de asignación", "color": "#32cd32" },
+    { "id": 3, "nombre": "ASIGNADA", "descripcion": "Recursos asignados, pendiente de ejecución", "color": "#1e90ff" },
+    { "id": 4, "nombre": "EN_PROGRESO", "descripcion": "Servicio en ejecución", "color": "#ff4500" },
+    { "id": 5, "nombre": "COMPLETADA", "descripcion": "Servicio completado exitosamente", "color": "#228b22" },
+    { "id": 6, "nombre": "CANCELADA", "descripcion": "Solicitud cancelada", "color": "#dc143c" }
+  ],
+
+  "tipos_traslado": [
+    { "id": 1, "nombre": "SUBIDA", "descripcion": "Transporte de trabajadores hacia faena" },
+    { "id": 2, "nombre": "BAJADA", "descripcion": "Transporte de trabajadores desde faena" },
+    { "id": 3, "nombre": "TRASLADO_INTERNO", "descripcion": "Transporte dentro de instalaciones" },
+    { "id": 4, "nombre": "AEROPUERTO", "descripcion": "Transporte desde/hacia aeropuerto" },
+    { "id": 5, "nombre": "ESPECIAL", "descripcion": "Servicios especiales o ejecutivos" }
+  ],
+
+  "areas_equipo": [
+    { "id": 1, "nombre": "MINERIA", "descripcion": "Área de operaciones mineras" },
+    { "id": 2, "nombre": "CONSTRUCCION", "descripcion": "Área de construcción y obras civiles" },
+    { "id": 3, "nombre": "INDUSTRIAL", "descripcion": "Área de operaciones industriales" },
+    { "id": 4, "nombre": "SERVICIOS", "descripcion": "Área de servicios generales" }
+  ],
+
+  "asignaciones": [
+    {
+      "id": 1,
+      "solicitudId": 2,
+      "vehiculoId": 2,
+      "conductorId": 3,
+      "estado": "CONFIRMADA",
+      "fechaAsignacion": "2024-03-08T09:20:00Z",
+      "observaciones": "Asignación confirmada con conductor Juan Pérez"
+    },
+    {
+      "id": 2,
+      "solicitudId": 3,
+      "vehiculoId": 4,
+      "conductorId": 3,
+      "estado": "EN_CURSO",
+      "fechaAsignacion": "2024-03-12T11:30:00Z",
+      "observaciones": "Servicio en progreso"
+    }
+  ],
+
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "tipo": "SISTEMA",
+      "titulo": "Nueva Solicitud Creada",
+      "mensaje": "El cliente María González ha creado una nueva solicitud para el 2024-03-15",
+      "leida": false,
+      "fechaCreacion": "2024-03-01T10:31:00Z",
+      "metadata": {
+        "solicitudId": 1,
+        "redireccion": "/requests"
+      }
+    },
+    {
+      "id": 2,
+      "userId": 4,
+      "tipo": "ASIGNACION",
+      "titulo": "Asignación Pendiente",
+      "mensaje": "La solicitud #2 requiere asignación de recursos",
+      "leida": false,
+      "fechaCreacion": "2024-03-05T14:16:00Z",
+      "metadata": {
+        "solicitudId": 2,
+        "redireccion": "/assignments"
+      }
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "tipo": "CONDUCTOR",
+      "titulo": "Nueva Asignación",
+      "mensaje": "Se te ha asignado el servicio del 2024-03-20 a las 14:00",
+      "leida": true,
+      "fechaCreacion": "2024-03-08T09:21:00Z",
+      "metadata": {
+        "asignacionId": 1,
+        "redireccion": "/my-assignments"
+      }
+    }
+  ],
+
+  "reclamos_felicitaciones": [
+    {
+      "id": 1,
+      "userId": 2,
+      "tipo": "FELICITACION",
+      "solicitudId": null,
+      "conductorId": 3,
+      "vehiculoId": 2,
+      "titulo": "Excelente Servicio",
+      "descripcion": "El conductor Juan fue muy profesional y puntual. Excelente manejo y trato cordial.",
+      "estado": "PENDIENTE",
+      "fechaCreacion": "2024-03-21T16:30:00Z",
+      "respuesta": null,
+      "fechaRespuesta": null,
+      "respondidoPor": null
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "tipo": "RECLAMO",
+      "solicitudId": 2,
+      "conductorId": null,
+      "vehiculoId": null,
+      "titulo": "Retraso en el Servicio",
+      "descripcion": "El servicio llegó 30 minutos tarde sin previo aviso. Esto afectó nuestras operaciones.",
+      "estado": "EN_REVISION",
+      "fechaCreacion": "2024-03-20T18:45:00Z",
+      "respuesta": "Estimado cliente, lamentamos el inconveniente. Se está investigando el incidente.",
+      "fechaRespuesta": "2024-03-21T09:15:00Z",
+      "respondidoPor": 1
+    }
+  ],
+
+  "estadisticas": {
+    "resumen": {
+      "totalSolicitudes": 3,
+      "solicitudesPendientes": 1,
+      "solicitudesCompletadas": 0,
+      "totalVehiculos": 4,
+      "vehiculosDisponibles": 2,
+      "vehiculosEnServicio": 1,
+      "totalUsuarios": 5,
+      "usuariosActivos": 5
+    },
+    "ultimaActualizacion": "2024-03-22T10:00:00Z"
+  }
+}
