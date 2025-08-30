@@ -1,94 +1,103 @@
 {
-  "users": [
+  "usuarios": [
     {
-      "id": 1,
-      "nombre": "Admin Principal",
-      "email": "admin@transportestc.com",
-      "rut": "12345678-9",
-      "role": "ADMINISTRADOR",
+      "ID_USUARIO": 1,
+      "NOMBRE_USER": "Admin Principal",
+      "EMAIL_USER": "admin@transportestc.com",
+      "RUT_USER": "12345678-9",
+      "ID_ROL": 1,
+      "rol": { "NOMBRE_ROL": "ADMINISTRADOR" },
       "activo": true
     },
     {
-      "id": 2,
-      "nombre": "María González",
-      "email": "maria@cliente1.com", 
-      "rut": "98765432-1",
-      "role": "CLIENTE",
+      "ID_USUARIO": 2,
+      "NOMBRE_USER": "María González",
+      "EMAIL_USER": "maria@cliente1.com", 
+      "RUT_USER": "98765432-1",
+      "ID_ROL": 2,
+      "rol": { "NOMBRE_ROL": "CLIENTE" },
       "activo": true
     },
     {
-      "id": 3,
-      "nombre": "Juan Pérez",
-      "email": "juan@transportestc.com",
-      "rut": "11223344-5", 
-      "role": "CONDUCTOR",
+      "ID_USUARIO": 3,
+      "NOMBRE_USER": "Juan Pérez",
+      "EMAIL_USER": "juan@transportestc.com",
+      "RUT_USER": "11223344-5", 
+      "ID_ROL": 3,
+      "rol": { "NOMBRE_ROL": "CONDUCTOR" },
       "activo": true
     }
   ],
 
   "solicitudes": [
     {
-      "id": 1,
-      "clienteId": 2,
-      "fechaServicio": "2024-03-15",
-      "horaRequerida": "08:00",
-      "horaFin": "17:00",
-      "origen": "Campamento Los Andes",
-      "destino": "Aeropuerto Antofagasta",
-      "pasajeros": "Juan Pérez, María García, Luis Morales",
-      "equipoRequerido": "MINIBUS",
-      "nombreEncargado": "María González",
-      "telefonoEncargado": "+56987654321",
-      "estado": "PENDIENTE",
-      "observaciones": "Servicio especial con equipaje",
-      "fechaCreacion": "2024-03-01T10:30:00Z"
+      "ID_SOLICITUD": 1,
+      "ID_USER_CLIENTE": 2,
+      "FECHA_SERVICIO": "2024-03-15",
+      "HORA_REQUERIDA_SERVICIO": "08:00",
+      "HORA_FIN_SERVICIO": "17:00",
+      "ORIGEN_SERVICIO": "Campamento Los Andes",
+      "DESTINO_SERVICIO": "Aeropuerto Antofagasta",
+      "PASAJEROS": "Juan Pérez, María García, Luis Morales",
+      "EQUIPO_REQUERIDO": "MINIBUS",
+      "NOMBRE_ENCARGADO": "María González",
+      "TELEFONO_ENCARGADO": "+56987654321",
+      "ID_ESTADO_SOLICITUD": 1,
+      "estado": { "NOMBRE_ESTADO_SOLICITUD": "PENDIENTE" },
+      "tipoTraslado": { "NOMBRE_TIPO_TRASLADO": "AEROPUERTO" },
+      "cliente": { "NOMBRE_USER": "María González" },
+      "OBSERVACIONES_SOLICITUD": "Servicio especial con equipaje",
+      "FECHA_CREACION": "2024-03-01T10:30:00Z"
     },
     {
-      "id": 2,
-      "clienteId": 2,
-      "fechaServicio": "2024-03-20",
-      "horaRequerida": "14:00",
-      "horaFin": "18:00",
-      "origen": "Hotel Centro",
-      "destino": "Faena Norte",
-      "pasajeros": "Carlos Mendoza, Sofía Reyes",
-      "equipoRequerido": "CAMIONETA",
-      "nombreEncargado": "María González",
-      "telefonoEncargado": "+56987654321",
-      "estado": "APROBADA",
-      "observaciones": "Transporte regular",
-      "fechaCreacion": "2024-03-05T14:15:00Z"
+      "ID_SOLICITUD": 2,
+      "ID_USER_CLIENTE": 2,
+      "FECHA_SERVICIO": "2024-03-20",
+      "HORA_REQUERIDA_SERVICIO": "14:00",
+      "HORA_FIN_SERVICIO": "18:00",
+      "ORIGEN_SERVICIO": "Hotel Centro",
+      "DESTINO_SERVICIO": "Faena Norte",
+      "PASAJEROS": "Carlos Mendoza, Sofía Reyes",
+      "EQUIPO_REQUERIDO": "CAMIONETA",
+      "NOMBRE_ENCARGADO": "María González",
+      "TELEFONO_ENCARGADO": "+56987654321",
+      "ID_ESTADO_SOLICITUD": 2,
+      "estado": { "NOMBRE_ESTADO_SOLICITUD": "APROBADA" },
+      "tipoTraslado": { "NOMBRE_TIPO_TRASLADO": "SUBIDA" },
+      "cliente": { "NOMBRE_USER": "María González" },
+      "OBSERVACIONES_SOLICITUD": "Transporte regular",
+      "FECHA_CREACION": "2024-03-05T14:15:00Z"
     }
   ],
 
   "vehiculos": [
     {
-      "id": 1,
-      "patente": "ABCD12",
-      "tipo": "MINIBUS",
-      "capacidad": 15,
-      "estado": "DISPONIBLE",
-      "enUso": false,
+      "ID_VEHICULO": 1,
+      "PATENTE_VEHICULO": "ABCD12",
+      "TIPO_VEHICULO": "MINIBUS",
+      "CAPACIDAD_VEHICULO": 15,
+      "ESTADO_VEHICULO": "DISPONIBLE",
+      "EN_USO": false,
       "marca": "Mercedes-Benz",
       "año": 2022
     },
     {
-      "id": 2,
-      "patente": "EFGH34", 
-      "tipo": "CAMIONETA",
-      "capacidad": 5,
-      "estado": "EN_SERVICIO",
-      "enUso": true,
+      "ID_VEHICULO": 2,
+      "PATENTE_VEHICULO": "EFGH34", 
+      "TIPO_VEHICULO": "CAMIONETA",
+      "CAPACIDAD_VEHICULO": 5,
+      "ESTADO_VEHICULO": "EN_SERVICIO",
+      "EN_USO": true,
       "marca": "Toyota",
       "año": 2023
     },
     {
-      "id": 3,
-      "patente": "IJKL56",
-      "tipo": "BUS", 
-      "capacidad": 40,
-      "estado": "DISPONIBLE",
-      "enUso": false,
+      "ID_VEHICULO": 3,
+      "PATENTE_VEHICULO": "IJKL56",
+      "TIPO_VEHICULO": "BUS", 
+      "CAPACIDAD_VEHICULO": 40,
+      "ESTADO_VEHICULO": "DISPONIBLE",
+      "EN_USO": false,
       "marca": "Volvo",
       "año": 2021
     }
@@ -96,79 +105,68 @@
 
   "notifications": [
     {
-      "id": 1,
-      "userId": 1,
-      "tipo": "SISTEMA",
-      "titulo": "Nueva Solicitud",
-      "mensaje": "María González creó una nueva solicitud para el 15 de Marzo",
-      "leida": false,
-      "fechaCreacion": "2024-03-01T10:31:00Z",
-      "redireccion": "/requests"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "tipo": "ASIGNACION",
-      "titulo": "Nueva Asignación",
-      "mensaje": "Se te asignó el servicio del 20 de Marzo a las 14:00",
-      "leida": false,
-      "fechaCreacion": "2024-03-08T09:21:00Z",
-      "redireccion": "/my-assignments"
-    }
-  ],
-
-  "config": [
-    {
-      "id": 1,
-      "key": "roles",
-      "data": [
-        { "id": 1, "nombre": "ADMINISTRADOR" },
-        { "id": 2, "nombre": "CLIENTE" },
-        { "id": 3, "nombre": "CONDUCTOR" },
-        { "id": 4, "nombre": "COORDINADOR FLOTA" }
-      ]
-    },
-    {
-      "id": 2,
-      "key": "estados_solicitud",
-      "data": [
-        { "id": 1, "nombre": "PENDIENTE", "color": "#ffa500" },
-        { "id": 2, "nombre": "APROBADA", "color": "#32cd32" },
-        { "id": 3, "nombre": "ASIGNADA", "color": "#1e90ff" },
-        { "id": 4, "nombre": "COMPLETADA", "color": "#228b22" },
-        { "id": 5, "nombre": "CANCELADA", "color": "#dc143c" }
-      ]
-    },
-    {
-      "id": 3,
-      "key": "tipos_traslado",
-      "data": [
-        { "id": 1, "nombre": "SUBIDA" },
-        { "id": 2, "nombre": "BAJADA" },
-        { "id": 3, "nombre": "TRASLADO_INTERNO" },
-        { "id": 4, "nombre": "AEROPUERTO" },
-        { "id": 5, "nombre": "ESPECIAL" }
-      ]
-    },
-    {
-      "id": 4,
-      "key": "auth_demo",
-      "data": {
-        "admin": { "email": "admin@transportestc.com", "password": "admin123", "userId": 1 },
-        "client": { "email": "maria@cliente1.com", "password": "client123", "userId": 2 },
-        "driver": { "email": "juan@transportestc.com", "password": "driver123", "userId": 3 }
+      "ID_NOTIFICACION": 1,
+      "ID_USUARIO": 1,
+      "TIPO_NOTIFICACION": "SISTEMA",
+      "TITULO": "Nueva Solicitud",
+      "MENSAJE": "María González creó una nueva solicitud para el 15 de Marzo",
+      "LEIDA": false,
+      "FECHA_CREACION": "2024-03-01T10:31:00Z",
+      "METADATA": {
+        "solicitudId": 1,
+        "redireccion": "/requests"
       }
     },
     {
-      "id": 5,
-      "key": "stats",
-      "data": {
-        "totalSolicitudes": 2,
-        "solicitudesPendientes": 1,
-        "totalVehiculos": 3,
-        "vehiculosDisponibles": 2,
-        "totalUsuarios": 3,
-        "ultimaActualizacion": "2024-03-22T10:00:00Z"
+      "ID_NOTIFICACION": 2,
+      "ID_USUARIO": 3,
+      "TIPO_NOTIFICACION": "ASIGNACION",
+      "TITULO": "Nueva Asignación",
+      "MENSAJE": "Se te asignó el servicio del 20 de Marzo a las 14:00",
+      "LEIDA": false,
+      "FECHA_CREACION": "2024-03-08T09:21:00Z",
+      "METADATA": {
+        "asignacionId": 1,
+        "redireccion": "/my-assignments"
+      }
+    }
+  ],
+
+  "login": [
+    {
+      "id": 1,
+      "email": "admin@transportestc.com",
+      "password": "admin123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.demo_admin_token",
+      "user": {
+        "ID_USUARIO": 1,
+        "NOMBRE_USER": "Admin Principal",
+        "EMAIL_USER": "admin@transportestc.com",
+        "rol": "ADMINISTRADOR"
+      }
+    },
+    {
+      "id": 2,
+      "email": "maria@cliente1.com",
+      "password": "client123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.demo_client_token",
+      "user": {
+        "ID_USUARIO": 2,
+        "NOMBRE_USER": "María González",
+        "EMAIL_USER": "maria@cliente1.com",
+        "rol": "CLIENTE"
+      }
+    },
+    {
+      "id": 3,
+      "email": "juan@transportestc.com",
+      "password": "driver123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.demo_driver_token",
+      "user": {
+        "ID_USUARIO": 3,
+        "NOMBRE_USER": "Juan Pérez",
+        "EMAIL_USER": "juan@transportestc.com",
+        "rol": "CONDUCTOR"
       }
     }
   ]
