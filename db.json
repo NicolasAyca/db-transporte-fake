@@ -11,7 +11,7 @@
     },
     {
       "ID_USUARIO": 2,
-      "NOMBRE_USER": "María González",
+      "NOMBRE_USER": "María Cliente",
       "EMAIL_USER": "maria@cliente1.com", 
       "RUT_USER": "98765432-1",
       "ID_ROL": 2,
@@ -171,3 +171,4 @@
     }
   ]
 }
+
